@@ -33,6 +33,11 @@
       "static/chunks/main.js",
       "static/chunks/webpack.js",
       "static/chunks/pages/catalog/products/[slug].js"
+    ],
+    "/payment": [
+      "static/chunks/main.js",
+      "static/chunks/webpack.js",
+      "static/chunks/pages/payment.js"
     ]
   },
   "ampFirstPages": []

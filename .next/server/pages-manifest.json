@@ -3,5 +3,6 @@
   "/_document": "pages/_document.js",
   "/_error": "pages/_error.js",
   "/cart": "pages/cart.js",
-  "/catalog/products/[slug]": "pages/catalog/products/[slug].js"
+  "/catalog/products/[slug]": "pages/catalog/products/[slug].js",
+  "/payment": "pages/payment.js"
 }

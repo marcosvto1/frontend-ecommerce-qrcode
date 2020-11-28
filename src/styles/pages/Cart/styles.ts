@@ -38,8 +38,31 @@ export const Info = styled.div`
 `;
 export const Total = styled.div`
   display: flex;
+  width: 100%;
   flex-direction: column;
 
+`;
+
+export const Row = styled.div`
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+
+`;
+
+export const Column = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  & > p {
+    font-size: 0.8rem;
+    color: #a0a0a0;
+  }
+  span {
+    font-size: 1rem;
+    font-weight: 600;
+  }
 `;
 
 export const Address = styled.div`
@@ -60,4 +83,7 @@ export const Address = styled.div`
       right: 1.5rem;
     }
 
+    span {
+      font-size: 1.2rem;
+    }
 `;
