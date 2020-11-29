@@ -10,7 +10,7 @@ import Link from 'next/link';
 import PrismicDOM from 'prismic-dom';
 import { FiCalendar, FiMapPin, FiTruck } from "react-icons/fi";
 
-export default function Cart() {
+const Cart = () => {
   const {cart, address } = useCart();
 
   return (
@@ -20,7 +20,7 @@ export default function Cart() {
         {cart.map(item => {
           let quantity = parseInt(item.quantity);
           return (
-            <Card key={item.product.id}>
+            <Card key={item.product.data.id}>
               <section>
                 <ThumbnailSmall src={item.product.data.thumbnail.url} alt=""/>
                 <Info>
@@ -63,3 +63,5 @@ export default function Cart() {
     </>
   );
 }
+
+export default Cart;

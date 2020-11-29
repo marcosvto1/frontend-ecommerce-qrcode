@@ -12,6 +12,7 @@ export const Container = styled.div`
   top: 0;
   background: #000;
   position: fixed;
+  z-index: 100000;
 
   @media (max-width: 450px) {
     bottom: 0;

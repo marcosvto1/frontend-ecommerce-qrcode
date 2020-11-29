@@ -5,7 +5,6 @@ export const Container = styled.hr`
   #panel1a-header {
     height: 1rem;
   }
-
 `;
 
 
@@ -38,6 +37,15 @@ export const AccordionContainer = styled(Accordion)`
 
   .MuiAccordionSummary-content.Mui-expanded {
     margin: 0 !important;
+  }
+  .MuiAccordionSummary-root {
+    padding: 0 !important;
+  }
+
+  @media (max-width: 450px) {
+    .MuiAccordionSummary-root {
+    padding: 0 16px !important;
+  }
   }
 `;
 export const ContainerTitle = styled.div`

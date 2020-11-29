@@ -2,8 +2,18 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
-  flex-direction: row;
-  width: 100%;
+  flex-direction: row-reverse;
+  width: 80%;
+  justify-content: space-between;
+  margin: 0 auto;
+  margin-top: 3rem !important;
+
+  img {
+      width: 450px;
+      height: 450px;
+      margin: 3rem 0;
+      border-radius: 8px;
+    }
 
   @media (max-width: 1080px) {
 
@@ -18,9 +28,10 @@ export const Container = styled.div`
     width: 100%;
 
     img {
+      margin: 0;
+      border-radius: 0;
       width: 100%;
       height: auto;
-      margin-top: 3rem;
     }
    
   }
@@ -28,24 +39,36 @@ export const Container = styled.div`
 
 export const Description = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   width: 100%;
   height: auto;
   border-radius: 24px;
   background: #FFF;
-  margin-top: -2rem;
+  padding: 3rem ;
+
   
-  @media (max-width: 1080px) {
-    
-  }
 
-  @media (max-width: 720px) {
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 300;
+    }
 
-  }
+    p {
+      font-size: 1rem;
+      font-weight: 300;
+    }
+
+    span {
+      margin-top: 1rem;
+      font-size: 2rem;
+      font-weight: 400;
+    }
 
   @media (max-width: 450px) {
+    margin-top: -2rem;
     flex-direction: column;
     width: 100%;
+    padding: 0;
     /* margin: 1rem; */
 
     section {
@@ -71,6 +94,7 @@ export const Description = styled.div`
 `;
 
 export const Quantity = styled.div`
+  @media (max-width: 450px) {
   margin: 1rem;
   p {
       font-size: 1rem;
@@ -82,16 +106,23 @@ export const Quantity = styled.div`
       font-size: 2rem;
       font-weight: 300;
     }
+  }
 `;
 
 export const Delivery = styled.div`
-  /* width: 100%;
-  height: auto;
-  margin-top: 1rem; */
+  margin: 1rem 0;
+
+  p {
+    font-size: 0.8rem;
+  }
+
+  @media (max-width: 450px) {
   margin: 1rem;
+  }
 `;
 
 export const Address = styled.div`
+  @media (max-width: 450px) {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -100,6 +131,7 @@ export const Address = styled.div`
   p {
     margin-left: 0.5rem;
     font-size: 0.8rem;
+  }
   }
 `;
 

@@ -69,7 +69,7 @@ export const Address = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin: 0.3rem 0;
+    margin: 0.5rem 0;
 
     p {
       margin-left: 0.5rem;

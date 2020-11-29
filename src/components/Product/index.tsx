@@ -1,3 +1,4 @@
+import Address from '@/components/Address';
 import { useCart } from '@/context/Cart/CartContext';
 import cep from 'cep-promise';
 import Link from 'next/link';
@@ -8,7 +9,8 @@ import { ButtonPrimary, ButtonSecundary } from '../Basics/Button/styles';
 import { Input, Label } from '../Basics/Input/styles';
 import Select from '../Basics/Select';
 import CardCollapse from '../CardCollapse';
-import { Address, Container, Delivery, Description, Error, Info, Quantity } from './styles';
+import IconLabel from '../IconLabel';
+import { Container, Delivery, Description, Error, Info, Quantity } from './styles';
 
 interface ProductProps {
   product: Document;
@@ -24,6 +26,7 @@ interface ProductProps {
 const Product: React.FC<ProductProps> = ({product, availability, title, stock, price, description, image}) => {
   const [quantity, setQuantity] = useState(1);
   const [inputCep, setInputCep] = useState('');
+  const [errorCep, setErrorCep] = useState('');
   const { setCart, address, setAddress} = useCart();
 
   const handleAddCart = () => {
@@ -39,7 +42,7 @@ const Product: React.FC<ProductProps> = ({product, availability, title, stock, p
     if (inputCep && inputCep.length === 8) { 
       cep(inputCep)
       .then(response => setAddress(response))
-      .catch(error => console.log(error))
+      .catch(error => setErrorCep(error))
     }
   }, [inputCep])
 
@@ -81,14 +84,8 @@ const Product: React.FC<ProductProps> = ({product, availability, title, stock, p
           />
           {address ? (
             <>
-              <Address>
-                <FiMapPin size={15}/>
-                <p>{address.street}, {address.neighborhood}, {address.city} - {address.state}</p>
-              </Address>
-              <Address>
-                <FiTruck size={15}/>
-                <p>Chegará {} por R$ {}</p>
-              </Address>
+            <IconLabel icon={<FiMapPin size={15}/>} label={<Address address={address}/>}/>
+            <IconLabel icon={<FiTruck size={15}/>} label={<p>Chegará {} por R$ {}</p>}/>
             </>
           ) :  (inputCep && inputCep.length === 8) ? (<Error> <FiAlertCircle size={15}/> CEP Inválido</Error>) : ''}
         </Delivery>
